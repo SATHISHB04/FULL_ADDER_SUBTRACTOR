@@ -2,6 +2,10 @@
 
 Implementation-of-Full-Adder-and-Full-subtractor-circuit
 
+NAME:SATHISH.B
+
+REG NO:24900077
+
 **AIM:**
 
 To design a Full Adder and Full Subtractor circuit and verify its truth table in Quartus using Verilog programming.
@@ -37,19 +41,43 @@ Diff = A ⊕ B ⊕ Bin
 Borrow out = A'Bin + A'B + BBin
 
 **Truthtable**
+![WhatsApp Image 2024-12-02 at 20 51 04_2a81fe0d](https://github.com/user-attachments/assets/6e678baa-aa44-4b01-86d8-98ab7c8380db)
+![WhatsApp Image 2024-12-02 at 20 51 05_adf3b166](https://github.com/user-attachments/assets/f84b8f9b-a9ea-40f5-af0f-17f1e415451f)
+
 
 **Procedure**
 
 Write the detailed procedure here
 
 **Program:**
+```
+full adder module exp4( input a,b,c, output sum,carry);
+ wire w1,w2,w3;
+ assign sum=a^b^c; 
+assign w1=a&b; 
+assign w2=b&c; 
+assign w3=c&a; 
+assign carry=w1|w2|w3;
+endmodule
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+full subtractor module experiment4(a,b,c,diff,borr); 
+input a,b,c; 
+output diff,borr;
+ wire w1,w2,w3,w4,w5,w6; xor g1(diff,a,b,c);
+ and g2(w4,w1,b); 
+and g3(w5,w1,b); 
+and g4(w6,b,c); 
+or g5(borr,w4,w5,w6);
+endmodule
+```
 
 **RTL Schematic**
+![exp4](https://github.com/user-attachments/assets/5d92b8ce-94a2-421b-a5bc-ff08c16f44fc)
+![exp4](https://github.com/user-attachments/assets/a412290a-2bc9-4612-ad54-0113fe215a4e)
 
 **Output Timing Waveform**
+![exp4 wave 1](https://github.com/user-attachments/assets/fce3f109-d354-46e6-ae57-a4dfde3a665f)
+![exp4 wave 2](https://github.com/user-attachments/assets/2b45f553-e456-43ba-90b5-e7e6dfa28ca3)
 
 **Result:**
 
